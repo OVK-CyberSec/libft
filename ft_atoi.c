@@ -10,7 +10,7 @@ int	ft_atoi(char *str)
 	returns = 0;
 	if (str[i] == '-')
 	{
-		sign = sign * -1;
+		sign *= -1;
 		i++;
 	}
 	else if (str[i] == '+')
