@@ -1,3 +1,5 @@
+#include <unistd.h>
+
 void	ft_putstr_nl_fd(char *str, int fd)
 {
 	while (*str)
