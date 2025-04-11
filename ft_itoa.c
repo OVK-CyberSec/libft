@@ -13,36 +13,54 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char	*ft_itoa(int nbr)
+static size_t	count_size(long nb)
 {
-	int		n;
-	char	*str;
-	int		i;
+	size_t	size;
 
-	n = nbr;
-	i = 0;
-	if (n <= 0)
-		i++;
-	while (nbr)
+	size = 0;
+	if (nb < 0)
 	{
-		nbr /= 10;
-		i++;
+		nb = nb * (-1);
+		size = 1;
 	}
-	str = (char *)malloc(sizeof(char) * (i + 1));
-	if (!str)
+	if (nb == 0)
+		size = 1;
+	else
+	{
+		while (nb)
+		{
+			nb = nb / 10;
+			size++;
+		}
+	}
+	return (size);
+}
+
+char	*ft_itoa(int n)
+{
+	size_t	size;
+	long	nb;
+	char	*str;
+	int		is_negative;
+
+	size = count_size((long) n);
+	str = (char *) malloc(sizeof(char) * (size + 1));
+	if (str == NULL)
 		return (NULL);
-	str[i] = '\0';
-	if (n == 0)
-		str[0] = '0';
-	if (n < 0)
+	nb = (long) n;
+	is_negative = 0;
+	if (nb < 0)
 	{
+		nb = nb * (-1);
 		str[0] = '-';
-		n = -n;
+		is_negative = 1;
 	}
-	while (n)
+	str[size] = '\0';
+	while (size > (size_t) is_negative)
 	{
-		str[--i] = n % 10 + '0';
-		n /= 10;
+		str[size - 1] = nb % 10 + '0';
+		nb = nb / 10;
+		size--;
 	}
 	return (str);
 }
