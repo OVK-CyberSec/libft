@@ -1,26 +1,35 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mohifdi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/11 17:56:36 by mohifdi           #+#    #+#             */
+/*   Updated: 2025/04/11 17:58:25 by mohifdi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include <stdio.h>
 #include <string.h>
 
-void *ft_memchr(const void *str, int c, size_t n)
+void	*ft_memchr(const void *str, int c, size_t n)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if (!str)
-        return NULL;
-    while (str && n > i)
-    {
-        if (str == '\0')
-            return NULL;
-        else if (str++ == c)
-            return (&str[i] - 1);
-            i++;
-    }
-    return str;
+	i = 0;
+	if (!str)
+		return (NULL);
+	while (str && n > i)
+	{
+		if (str == '\0')
+			return (NULL);
+		else if (str++ == c)
+			return (&str[i] - 1);
+		i++;
+	}
+	return (str);
 }
-
-
+/*
 #include <stdio.h>
 #include <string.h>
 
@@ -38,3 +47,4 @@ int main() {
 
    return 0;
 }
+*/

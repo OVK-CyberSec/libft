@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mohifdi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/11 17:52:46 by mohifdi           #+#    #+#             */
+/*   Updated: 2025/04/11 17:53:31 by mohifdi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include <stdio.h>
 
-int ft_isdigit(int value)
+int	ft_isdigit(int value)
 {
-    if (value > 47 && value < 58)
-        return  value > 0;
-    return 0;
+	if (value > 47 && value < 58)
+		return (value > 0);
+	return (0);
 }
 
+/*
 int main()
 {
     char c;
@@ -18,3 +30,4 @@ int main()
 
     return 0;
 }
+*/

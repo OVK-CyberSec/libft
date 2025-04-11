@@ -1,50 +1,57 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mohifdi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/11 17:30:04 by mohifdi           #+#    #+#             */
+/*   Updated: 2025/04/11 18:31:18 by mohifdi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (str[i])
-        i++;
-    return i;
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-    char *dest;
-    int total_size;
-    int s1_size;
-    int s2_size;
-    int i;
-    int j;
+	char	*dest;
+	int		total_size;
+	int		i;
 
-    if (!s1 || !s2)
-        return NULL;
-    total_size = ft_strlen(s1) + ft_strlen(s2);
-    s1_size = ft_strlen(s1);
-    s2_size = ft_strlen(s2);
-    dest = (char *)malloc(total_size + 1);
-    if (!dest)
-        return NULL;
-    i = 0;
-    while (i < s1_size)
-    {
-        dest[i] = s1[i];
-        i++;
-    }
-    j = 0;
-    while (j < s2_size)
-    {
-        dest[i + j] = s2[j];
-        j++;
-    }
-    dest[i + j] = '\0';
-    return dest;
+	if (!s1 || !s2)
+		return (NULL);
+	total_size = ft_strlen(s1) + ft_strlen(s2) + 1;
+	dest = (char *)malloc(total_size);
+	if (!dest)
+		return (NULL);
+	i = 0;
+	while (s1[i])
+	{
+		dest[i] = s1[i];
+		i++;
+	}
+	while (*s2)
+	{
+		dest[i] = *s2;
+		i++;
+		s2++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
 
+/*
 int main(void)
 {
     char *str1 = "Hello, ";
@@ -64,3 +71,4 @@ int main(void)
 
     return 0;
 }
+*/

@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mohifdi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/11 16:23:41 by mohifdi           #+#    #+#             */
+/*   Updated: 2025/04/11 16:24:29 by mohifdi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 int	ft_atoi(char *str)
 {
@@ -22,7 +33,7 @@ int	ft_atoi(char *str)
 	}
 	return (returns * sign);
 }
-
+/*
 #include <stdio.h>
 int main() {
     // Test de la fonction ft_atoi avec différents exemples
@@ -36,4 +47,4 @@ int main() {
     printf("%s = %d\n", str1, ft_atoi(str2)); 
     return 0;
 }
-
+*/

@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mohifdi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/11 16:59:01 by mohifdi           #+#    #+#             */
+/*   Updated: 2025/04/11 18:50:47 by mohifdi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -14,7 +25,7 @@ int	ft_strlen(char *str)
 
 int	is_separator(char c, char sep)
 {
-    return (c == sep);
+	return (c == sep);
 }
 
 int	count_words(char *str, char sep)
@@ -59,9 +70,9 @@ char	*word_splitter(char *str, char sep)
 	return (word);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-    int		i;
+	int		i;
 	int		j;
 	char	**words;
 
@@ -77,14 +88,14 @@ char **ft_split(char const *s, char c)
 			words[j++] = word_splitter((char *)&s[i], c);
 			while (s[i] && !is_separator(s[i], c))
 				i++;
-        }
+		}
 		else
 			i++;
 	}
 	words[j] = 0;
 	return (words);
 }
-
+/*
 int main(void)
 {
 	char *str = "Ceci est un test !";
@@ -103,3 +114,4 @@ int main(void)
 
 	return 0;
 }
+*/

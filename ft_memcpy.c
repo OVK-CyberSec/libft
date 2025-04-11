@@ -1,21 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mohifdi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/11 16:46:30 by mohifdi           #+#    #+#             */
+/*   Updated: 2025/04/11 18:34:23 by mohifdi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include <stdio.h>
 #include <string.h>
 
-void *ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-    unsigned char *d = dest;
-    const char *s = src;
-    size_t i;
+	unsigned char	*d;
+	const char		*s;
+	size_t			i;
 
-    i = 0;
-    while (n > i)
-    {
-        d[i] = s[i];
-        i++;
-    }
-    return dest;
+	d = dest;
+	s = src;
+	i = 0;
+	while (n > i)
+	{
+		d[i] = s[i];
+		i++;
+	}
+	return (dest);
 }
-
+/*
 int main() {
     char src[] = "Bonjour, monde!";
     char dest[20];
@@ -28,3 +41,4 @@ int main() {
 
     return 0;
 }
+*/

@@ -1,11 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mohifdi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/11 17:05:07 by mohifdi           #+#    #+#             */
+/*   Updated: 2025/04/11 17:05:56 by mohifdi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include <stdio.h>
 #include <string.h>
 
-
-char *strnstr(const char *str,	const char *to_find, size_t len)
+char	*strnstr(const char *str, const char *to_find, size_t len)
 {
-    size_t	i;
-	int	j;
+	size_t	i;
+	int		j;
 
 	i = 0;
 	if (to_find[i] == '\0')
@@ -21,7 +31,7 @@ char *strnstr(const char *str,	const char *to_find, size_t len)
 	}
 	return (0);
 }
-
+/*
 int main() {
     const char *haystack = "Bonjour tout le monde";
     const char *needle = "tout";
@@ -37,3 +47,4 @@ int main() {
 
     return 0;
 }
+*/

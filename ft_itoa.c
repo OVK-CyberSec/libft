@@ -1,56 +1,53 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mohifdi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/11 16:27:28 by mohifdi           #+#    #+#             */
+/*   Updated: 2025/04/11 18:50:12 by mohifdi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <stdlib.h>
 
-
-int	ft_decimal_places(long n)
-{
-	int i;
-
-    i = 0;
-	if (n < 0)
-	{
-		n *= -1;
-		i++;
-	}
-	while (n > 0)
-	{
-		n /= 10;
-		i++;
-	}
-	return (i);
-}
-
 char	*ft_itoa(int nbr)
 {
-	int long	n;
+	int		n;
 	char	*str;
-	int	i;
+	int		i;
 
 	n = nbr;
-	i = ft_decimal_places(n);
-	str = (char *) malloc(sizeof(char) * (i + 1));
-	if (str == NULL)
-		return (NULL);
-	str[i--] = '\0';
-	if (n == 0)
+	i = 0;
+	if (n <= 0)
+		i++;
+	while (nbr)
 	{
-		str[0] = '0';
-		return (str);
+		nbr /= 10;
+		i++;
 	}
+	str = (char *)malloc(sizeof(char) * (i + 1));
+	if (!str)
+		return (NULL);
+	str[i] = '\0';
+	if (n == 0)
+		str[0] = '0';
 	if (n < 0)
 	{
 		str[0] = '-';
-		n *= -1;
+		n = -n;
 	}
-	while (n > 0)
+	while (n)
 	{
-		str[i] = n % 10 + '0';
+		str[--i] = n % 10 + '0';
 		n /= 10;
-		i--;
 	}
 	return (str);
 }
 
+/*
 int	main(void)
 {
 	int	n = -987564;
@@ -62,4 +59,5 @@ int	main(void)
 		printf("str[%d] = [%c]\n", i, str[i]);
 		i++;
 	}
-} 
+}
+*/

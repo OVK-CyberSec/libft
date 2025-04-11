@@ -1,48 +1,61 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mohifdi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/11 16:48:00 by mohifdi           #+#    #+#             */
+/*   Updated: 2025/04/11 18:32:11 by mohifdi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
-void *ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-    unsigned char *d = dest;
-    const char *s = src;
-    size_t i;
+	unsigned char	*d;
+	const char		*s;
+	size_t			i;
 
-    i = 0;
-    while (n > i)
-    {
-        d[i] = s[i];
-        i++;
-    }
-    return dest;
+	d = dest;
+	s = src;
+	i = 0;
+	while (n > i)
+	{
+		d[i] = s[i];
+		i++;
+	}
+	return (dest);
 }
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (str[i])
-        i++;
-    return i;
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
 
-char *ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
-    size_t len;
-    char *string;
+	size_t	len;
+	char	*string;
 
-    if (!s)
-        return NULL;
-    len = ft_strlen((char *)s) + 1;
-    string = (char *)malloc(len);
-    if (!string)
-        return NULL;
-    ft_memcpy(string, s, len);
-        return string;
+	if (!s)
+		return (NULL);
+	len = ft_strlen((char *)s) + 1;
+	string = (char *)malloc(len);
+	if (!string)
+		return (NULL);
+	ft_memcpy(string, s, len);
+	return (string);
 }
 
-
+/*
 int main() {
     const char *original = "Bonjour, le monde!";
     
@@ -63,3 +76,4 @@ int main() {
 
     return 0;
 }
+*/
