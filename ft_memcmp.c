@@ -13,7 +13,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int	ft_memcmp(const void *ptr1, const void *ptr2, size_t num)
+int ft_memcmp(const void *ptr1, const void *ptr2, size_t num)
 {
 	size_t			i;
 	unsigned char	*p1;
