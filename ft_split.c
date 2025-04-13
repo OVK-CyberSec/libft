@@ -9,11 +9,9 @@
 /*   Updated: 2025/04/11 18:50:47 by mohifdi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	int	i;
 
@@ -28,7 +26,7 @@ int	is_separator(char c, char sep)
 	return (c == sep);
 }
 
-int	count_words(char *str, char sep)
+int	count_words(const char *str, char sep)
 {
 	int	i;
 	int	words;

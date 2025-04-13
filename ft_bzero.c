@@ -9,20 +9,18 @@
 /*   Updated: 2025/04/11 18:54:56 by mohifdi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-int	ft_strlen(char *str);
-
-void	bzero(void *s, size_t len)
+void	ft_bzero(void *s, size_t n)
 {
 	size_t			i;
-	unsigned char	*s1;
 
-	s1 = (unsigned char *)s;
 	i = 0;
-	while (i < ft_strlen(s) - 1)
-		s1[i++] = '\0';
+	while (i < n)
+	{
+		*(unsigned char *)(s + i) = 0;
+		i++;
+	}
 }
 
 /*

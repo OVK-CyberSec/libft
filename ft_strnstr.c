@@ -9,28 +9,28 @@
 /*   Updated: 2025/04/11 17:05:56 by mohifdi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-char	*strnstr(const char *str, const char *to_find, size_t len)
+char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
 	size_t	i;
-	int		j;
+	size_t	j;
 
+	if (*to_find == '\0')
+		return ((char *)str);
 	i = 0;
-	if (to_find[i] == '\0')
-		return (str);
-	while (str[i] && len > i)
+	while (str[i] && i < len)
 	{
 		j = 0;
-		while (str[i + j] == to_find[j] && to_find[j] != '\0')
+		while (str[i + j] == to_find[j] && (i + j) < len && to_find[j])
 			j++;
 		if (to_find[j] == '\0')
-			return (str + i);
+			return ((char *)&str[i]);
 		i++;
 	}
 	return (0);
 }
+
 /*
 int main() {
     const char *haystack = "Bonjour tout le monde";

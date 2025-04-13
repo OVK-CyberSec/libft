@@ -9,23 +9,26 @@
 /*   Updated: 2025/04/11 17:04:45 by mohifdi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-char	*ft_strchr(char *str, int character)
+char	*ft_strchr(const char *s, int c)
 {
-	if (!str)
-		return (0);
-	while (str++)
+	size_t	i;
+
+	i = 0;
+	while (s[i])
 	{
-		if (character == *str)
-			return (str);
+		if (s[i] == (char) c)
+			break ;
+		i++;
 	}
-	return (str);
+	if (s[i] == (char) c)
+		return ((char *) s + i);
+	return (NULL);
 }
 
-/*
 #include <stdio.h>
 void main(){
     char *nom = "Amine";
     printf("%s", strchr(nom,'i'));
 }
-*/

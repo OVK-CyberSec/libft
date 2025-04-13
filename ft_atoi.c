@@ -9,23 +9,26 @@
 /*   Updated: 2025/04/11 16:24:29 by mohifdi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
-	int	i;
+	size_t	i;
 	int	sign;
 	int	returns;
 
 	i = 0;
-	sign = -1;
+	sign = 1;
 	returns = 0;
-	if (str[i] == '-')
+	while (str[i] == ' ' || ('\t' <= str[i] && str[i] <= '\r'))
+		i++;
+	if (str[i] == '+')
+		i++;
+	else if (str[i] == '-')
 	{
 		sign *= -1;
 		i++;
 	}
-	else if (str[i] == '+')
-		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		returns = returns * 10 + (str[i] - '0');
@@ -37,7 +40,7 @@ int	ft_atoi(char *str)
 #include <stdio.h>
 int main() {
     // Test de la fonction ft_atoi avec différents exemples
-    char *str1 = "-1234567";
+    char *str1 = " -1234567";
     char *str2 = "+42";
     char *str3 = "   -987";
     char *str4 = " +42abc";

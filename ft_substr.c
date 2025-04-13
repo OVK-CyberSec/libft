@@ -9,44 +9,28 @@
 /*   Updated: 2025/04/11 17:52:35 by mohifdi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
-int	ft_strlen(const char *str)
-{
-	int	len;
-
-	len = 0;
-	while (str[len] != '\0')
-		len++;
-	return (len);
-}
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	str_len;
+	char			*new;
 	unsigned int	i;
-	char			*dest;
 
-	if (!s)
-		return (NULL);
-	str_len = ft_strlen(s);
-	if (start >= str_len)
-		return (NULL);
-	if (start + len > str_len)
-		len = str_len - start;
-	dest = (char *)malloc(len + 1);
-	if (!dest)
+	if (start >= ft_strlen(s))
+		len = 0;
+	else if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
+	new = malloc(sizeof(char) * (len + 1));
+	if (!new)
 		return (NULL);
 	i = 0;
-	while (i < len)
+	while (start + i < ft_strlen(s) && i < len)
 	{
-		dest[i] = s[start + i];
+		new[i] = s[start + i];
 		i++;
 	}
-	dest[len] = '\0';
-	return (dest);
+	new[i] = '\0';
+	return (new);
 }
 
 /*

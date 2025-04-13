@@ -9,14 +9,7 @@
 /*   Updated: 2025/04/11 17:08:20 by mohifdi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-#include <stdio.h>
 #include "libft.h"
-
-void	del(void *content)
-{
-	free(content);
-}
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {

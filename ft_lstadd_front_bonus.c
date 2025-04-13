@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohifdi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/11 16:56:26 by mohifdi           #+#    #+#             */
-/*   Updated: 2025/04/11 16:58:40 by mohifdi          ###   ########.fr       */
+/*   Created: 2025/04/11 17:01:43 by mohifdi           #+#    #+#             */
+/*   Updated: 2025/04/11 18:26:31 by mohifdi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-#include <stdio.h>
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list	*temp;
-
-	if (!lst || !new)
-		return ;
-	if (!*lst)
+	if (lst && new)
 	{
+		new->next = *lst;
 		*lst = new;
-		return ;
 	}
-	temp = *lst;
-	while (temp->next)
-		temp = temp->next;
-	temp->next = new;
 }

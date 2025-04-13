@@ -9,8 +9,6 @@
 /*   Updated: 2025/04/11 19:02:17 by mohifdi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-#include <stdio.h>
 #include "libft.h"
 
 t_list	*ft_lstnew(void *content)

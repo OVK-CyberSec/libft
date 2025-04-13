@@ -9,9 +9,7 @@
 /*   Updated: 2025/04/11 18:50:12 by mohifdi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 static size_t	count_size(long nb)
 {

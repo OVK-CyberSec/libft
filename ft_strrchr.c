@@ -9,22 +9,23 @@
 /*   Updated: 2025/04/11 17:27:07 by mohifdi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-int	ft_strlen(char *str);
-
-char	*ft_strrchr(const char *string, int searchedChar)
+char	*ft_strrchr(const char *s, int searchedChar)
 {
-	int	i;
+	size_t	i;
 
-	i = ft_strlen(string) - 1;
-	while (i >= 0)
+	while (!s)
+		return NULL; 
+	i = ft_strlen((char*)s);
+	while (i > 0)
 	{
-		if (string[i] == searchedChar)
-			return (string + i);
+		if (s[i] == (char)searchedChar)
+			break ;
 		i--;
 	}
+	if (s[i] == (char)searchedChar)
+		return ((char *)(s + i));
 	return (NULL);
 }
 

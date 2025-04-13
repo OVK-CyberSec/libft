@@ -9,9 +9,7 @@
 /*   Updated: 2025/04/11 17:01:21 by mohifdi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
 static void	*ft_memalloc(size_t size)
 {

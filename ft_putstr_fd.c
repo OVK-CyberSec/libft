@@ -9,10 +9,9 @@
 /*   Updated: 2025/04/11 16:54:00 by mohifdi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include <unistd.h>
-
-void	ft_putstr_nl_fd(char *str, int fd)
+void	ft_putstr_fd(char const *str, int fd)
 {
 	while (*str)
 		write(fd, str++, 1);

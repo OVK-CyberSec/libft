@@ -9,25 +9,22 @@
 /*   Updated: 2025/04/11 18:31:18 by mohifdi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
-
-	i = 0;
+	int	i = 0;
 	while (str[i])
 		i++;
 	return (i);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*dest;
 	int		total_size;
 	int		i;
+	int		j;
 
 	if (!s1 || !s2)
 		return (NULL);
@@ -41,13 +38,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		dest[i] = s1[i];
 		i++;
 	}
-	while (*s2)
+	j = 0;
+	while (s2[j])
 	{
-		dest[i] = *s2;
-		i++;
-		s2++;
+		dest[i + j] = s2[j];
+		j++;
 	}
-	dest[i] = '\0';
+	dest[i + j] = '\0';
 	return (dest);
 }
 

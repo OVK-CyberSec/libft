@@ -9,25 +9,22 @@
 /*   Updated: 2025/04/11 17:58:25 by mohifdi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *str, int c, size_t n)
 {
-	int	i;
+	size_t			i;
+	unsigned char	*s;
 
+	s = (unsigned char *)str;
 	i = 0;
-	if (!str)
-		return (NULL);
-	while (str && n > i)
+	while (i < n)
 	{
-		if (str == '\0')
-			return (NULL);
-		else if (str++ == c)
-			return (&str[i] - 1);
+		if (s[i] == (unsigned char)c)
+			return ((void *)&s[i]);
 		i++;
 	}
-	return (str);
+	return (NULL);
 }
 /*
 #include <stdio.h>

@@ -9,10 +9,11 @@
 /*   Updated: 2025/04/11 16:27:08 by mohifdi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int	ft_isprint(int value)
+int	ft_isprint(int v)
 {
-	if (value >= 0 && value <= 31)
-		return (0);
-	return (1);
+	if ((v >= 32 && v < 127))
+		return (1);
+	return (0);
 }

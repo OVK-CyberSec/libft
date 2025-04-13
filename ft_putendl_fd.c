@@ -9,9 +9,14 @@
 /*   Updated: 2025/04/11 18:09:00 by mohifdi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putendl_fd(char *str, int fd)
+void	ft_putendl_fd(char const *str, int fd)
 {
-	write(fd, "\n", 1);
+	if (str)
+	{
+		while (*str)
+			write(fd, str++, 1);
+		write(fd, "\n", 1);
+	}
 }

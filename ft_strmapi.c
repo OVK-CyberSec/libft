@@ -1,6 +1,12 @@
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
+size_t	ft_strlen(const char *str)
+{
+	int	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
 
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
