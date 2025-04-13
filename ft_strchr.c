@@ -26,9 +26,10 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *) s + i);
 	return (NULL);
 }
-
+/*
 #include <stdio.h>
 void main(){
     char *nom = "Amine";
     printf("%s", strchr(nom,'i'));
 }
+*/
