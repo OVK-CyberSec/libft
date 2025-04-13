@@ -11,48 +11,6 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-void	*ft_memcpy(void *dest, const void *src, size_t n)
-{
-	unsigned char	*d;
-	const char		*s;
-	size_t			i;
-
-	d = dest;
-	s = src;
-	i = 0;
-	while (n > i)
-	{
-		d[i] = s[i];
-		i++;
-	}
-	return (dest);
-}
-
-char	*ft_strdup(const char *s)
-{
-	size_t	len;
-	char	*string;
-
-	if (!s)
-		return (NULL);
-	len = ft_strlen((char *)s) + 1;
-	string = (char *)malloc(len);
-	if (!string)
-		return (NULL);
-	ft_memcpy(string, s, len);
-	return (string);
-}
-
 static int	is_in_set(char c, const char *set)
 {
 	while (*set)
