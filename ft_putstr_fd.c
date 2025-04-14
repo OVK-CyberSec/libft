@@ -6,13 +6,19 @@
 /*   By: mohifdi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:53:56 by mohifdi           #+#    #+#             */
-/*   Updated: 2025/04/11 16:54:00 by mohifdi          ###   ########.fr       */
+/*   Updated: 2025/04/14 19:17:41 by mohifdi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 void	ft_putstr_fd(char const *str, int fd)
 {
-	while (*str)
-		write(fd, str++, 1);
+	size_t	i;
+
+	if (!str)
+		return ;
+	i = 0;
+	while (str[i])
+		write(fd, &str[i++], 1);
 }
+

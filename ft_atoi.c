@@ -6,7 +6,7 @@
 /*   By: mohifdi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:23:41 by mohifdi           #+#    #+#             */
-/*   Updated: 2025/04/11 16:24:29 by mohifdi          ###   ########.fr       */
+/*   Updated: 2025/04/14 15:24:31 by mohifdi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -14,8 +14,8 @@
 int	ft_atoi(const char *str)
 {
 	size_t	i;
-	int	sign;
-	int	returns;
+	int		sign;
+	int		returns;
 
 	i = 0;
 	sign = 1;

@@ -6,12 +6,12 @@
 /*   By: mohifdi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:30:33 by mohifdi           #+#    #+#             */
-/*   Updated: 2025/04/11 18:36:25 by mohifdi          ###   ########.fr       */
+/*   Updated: 2025/04/14 15:11:10 by mohifdi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int ft_memcmp(const void *ptr1, const void *ptr2, size_t num)
+int	ft_memcmp(const void *ptr1, const void *ptr2, size_t num)
 {
 	size_t			i;
 	unsigned char	*p1;
@@ -30,6 +30,7 @@ int ft_memcmp(const void *ptr1, const void *ptr2, size_t num)
 	}
 	return (0);
 }
+
 /*
 int main() {
     char buffer1[] = "Bonjour";

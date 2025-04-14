@@ -6,40 +6,46 @@
 /*   By: mohifdi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 17:25:45 by mohifdi           #+#    #+#             */
-/*   Updated: 2025/04/11 17:27:07 by mohifdi          ###   ########.fr       */
+/*   Updated: 2025/04/14 19:16:17 by mohifdi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int searchedChar)
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
+	int	i;
 
-	while (!s)
-		return NULL; 
-	i = ft_strlen((char*)s);
-	while (i > 0)
+	i = 0;
+	while (s[i])
+		i++;
+	while (i >= 0)
 	{
-		if (s[i] == (char)searchedChar)
-			break ;
+		if (s[i] == (char)c)
+			return ((char*)(s + i));
 		i--;
 	}
-	if (s[i] == (char)searchedChar)
-		return ((char *)(s + i));
 	return (NULL);
 }
 
 /*
 int main() {
-    const char *str = "bonjour tout le monde";
-    char *result = ft_strrchr(str, 'o');
 
-    if (result != NULL) {
-        printf("Le dernier 'o' se trouve à la position: %ld\n", result - str);
-    } else {
-        printf("Le caractère n'a pas été trouvé.\n");
-    }
+    // Le nom du fichier d'origine
+    const char * originalFilename = "folder/image.jpg";
 
-    return 0;
+    // On prépare le nom du fichier de destination
+    size_t size = strlen( originalFilename ) + 1;   // +1 pour le zéro terminal
+    char * destinationFilename = (char *) malloc( size );
+    strcpy( destinationFilename, originalFilename );
+
+    // Et on y remplace l'extension du fichier par l'extension .png
+    char * lastDotPos = strrchr( destinationFilename, '.' );
+    strcpy( lastDotPos, ".png" );
+
+    // On affiche les deux noms de fichiers
+    puts( originalFilename );
+    puts( destinationFilename );
+
+    return EXIT_SUCCESS;
 }
 */
